@@ -17,12 +17,30 @@
         <h1 class=" col-md no-margin">
            <%= link_to "CordobaRemis", root_path%>
          </h1>
-          <li class="col-md font-large">
-            Registrate
-          </li>
-          <li class="col-md font-large">
-            inicia sesión
-          </li>
+
+         <% if passenger_signed_in? %>
+           <li class="col-md font-large">
+             <%= current_passenger.name %>
+           </li>
+           <li class="col-md font-large">
+             <%= link_to('Logout', destroy_passenger_session_path, :method => :delete) %>
+           </li>
+
+          <% elsif driver_signed_in? %>
+            <li class="col-md font-large">
+              <%= current_driver.name %>
+            </li>
+            <li class="col-md font-large">
+              <%= link_to('Logout', destroy_driver_session_path, :method => :delete) %>
+            </li>
+          <% else %>
+            <li class="col-md font-large">
+              <%= link_to('Register', session_helper_register_path)  %>
+            </li>
+            <li class="col-md font-large">
+              <%= link_to('Login', session_helper_login_path)  %>
+            </li>
+          <% end %>
 
         </ul>
       </nav>
