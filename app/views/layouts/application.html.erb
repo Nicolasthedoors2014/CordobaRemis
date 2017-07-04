@@ -20,7 +20,7 @@
 
          <% if passenger_signed_in? %>
            <li class="col-md font-large">
-             <%= current_passenger.name %>
+             <%= "Hola " + current_passenger.name + "!" %>
            </li>
            <li class="col-md font-large">
              <%= link_to('Cerrar sesión', destroy_passenger_session_path, :method => :delete) %>
@@ -28,7 +28,7 @@
 
           <% elsif driver_signed_in? %>
             <li class="col-md font-large">
-              <%= current_driver.name %>
+              <%= "Hola " + current_driver.name + "!"%>
             </li>
             <li class="col-md font-large">
               <%= link_to('Cerrar sesión', destroy_driver_session_path, :method => :delete) %>
