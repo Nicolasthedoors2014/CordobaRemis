@@ -1,0 +1,21 @@
+
+<table class="rwd-table center-xs middle-xs">
+  <tr>
+    <th>Origen</th>
+    <th>Destino</th>
+  </tr>
+    <%= form_tag("create", method: "post") do %>
+      <tr>
+        <td>
+          <%= select_tag(:origin,  options_for_select(@locations.collect{ |u| [u.name, u.id] })) %>
+        </td>
+        <td>
+          <%= select_tag(:destination,  options_for_select(@locations.collect{ |u| [u.name, u.id] })) %>
+        </td>
+        <td>
+          <%= submit_tag "Pedir" %>
+        </td>
+      </tr>
+    <% end %>
+
+</table>

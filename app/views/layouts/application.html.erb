@@ -3,7 +3,7 @@
   <head>
     <title>CordobaRemis</title>
     <%= csrf_meta_tags %>
-
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -12,15 +12,18 @@
 
 
     <header>
-      <nav class="be-blue white large-padding">
+      <nav class="be-white black large-padding">
         <ul class="no-list row center-xs middle-xs">
-        <h1 class=" col-md no-margin">
+        <h1 class="col-md-offset no-margin">
            <%= link_to "CordobaRemis", root_path%>
          </h1>
 
          <% if passenger_signed_in? %>
            <li class="col-md font-large">
              <%= "Hola " + current_passenger.name + "!" %>
+           </li>
+           <li class="col-md font-large">
+             <%= link_to('Pedir viaje',trip_new_url) %>
            </li>
            <li class="col-md font-large">
              <%= link_to('Cerrar sesión', destroy_passenger_session_path, :method => :delete) %>
@@ -35,10 +38,10 @@
             </li>
           <% else %>
             <li class="col-md font-large">
-              <%= link_to('Registrarse', session_helper_register_path)  %>
+              <%= link_to('Registrarse', session_helper_register_path) %>
             </li>
             <li class="col-md font-large">
-              <%= link_to('Iniciar sesión', session_helper_login_path)  %>
+              <%= link_to('Iniciar sesión', session_helper_login_path) %>
             </li>
           <% end %>
 
@@ -48,7 +51,7 @@
 
     <%= yield %>
 
-    <p class="notice col-md-offset-3"><%= notice %></p>
-    <p class="alert col-md-offset-3"><%= alert %></p>
+    <p class="notice col-md-offset-3 white"><%= notice %></p>
+    <p class="alert col-md-offset-3 white"><%= alert %></p>
   </body>
 </html>
