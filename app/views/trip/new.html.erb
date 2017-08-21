@@ -1,10 +1,9 @@
-
-<table class="rwd-table center-xs middle-xs">
-  <tr>
-    <th>Origen</th>
-    <th>Destino</th>
-  </tr>
-    <%= form_tag("create", method: "post") do %>
+  <%= form_tag("create", method: "post") do %>
+    <table class="rwd-table center-xs middle-xs">
+      <tr>
+        <th>Origen</th>
+        <th>Destino</th>
+      </tr>
       <tr>
         <td>
           <%= select_tag(:origin,  options_for_select(@locations.collect{ |u| [u.name, u.id] })) %>
@@ -16,6 +15,5 @@
           <%= submit_tag "Pedir" %>
         </td>
       </tr>
-    <% end %>
-
-</table>
+    </table>
+  <% end %>

@@ -1,5 +1,5 @@
 class TripController < ApplicationController
-   # before_action :authenticate_passenger!, except:[:new]
+   before_action :authenticate_passenger!, except:[:new]
 
   def new
     @locations = Location.all
