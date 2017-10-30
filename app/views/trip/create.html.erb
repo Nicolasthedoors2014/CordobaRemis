@@ -11,10 +11,13 @@
       <% @allTrips.each do |driver, trip| %>
         <tr>
           <td>
-            <%= trip.driver_id[:name] %>
+            <%= trip.driver[:name] %>
           </td>
           <td>
-            jaja
+            <%= trip.cost %>
+          </td>
+          <td>
+            <%= trip.driver[:rating] %>
           </td>
           <td>
             <%= radio_button_tag('driver', driver ) %>

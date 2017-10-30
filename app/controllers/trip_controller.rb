@@ -7,18 +7,25 @@ class TripController < ApplicationController
 
   def create
     @allTrips = Hash.new
-    origin_id = params[:origin]
-    destination_id = params[:destination]
+    origin = params[:origin]
+    destination = params[:destination]
 
-     Driver.where(location_id: origin_id).each do |driver|
-      trip = Trip.new(driver_id: driver ,cost: 5, origin_id: origin_id, destination_id: destination_id ,distance:2)
+     Driver.where(location_id: origin).each do |driver|
+      trip = Trip.new(driver: driver ,cost: 5, origin_id: origin, destination_id: destination ,distance:2)
       @allTrips[driver.id] = trip
     end
 
   end
 
   def selectedTrip
+
     render plain: params.inspect
+  end
+
+  private
+
+  def distance
+
   end
 
 
