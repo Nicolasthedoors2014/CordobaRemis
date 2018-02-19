@@ -1,8 +1,12 @@
+
+<div class="container-fluid d-flex justify-content-center  align-items-center ja flex-column">
+
+
   <%= form_tag("create", method: "post") do %>
-    <table class="rwd-table center-xs middle-xs">
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
       <tr>
-        <th>Origen</th>
-        <th>Destino</th>
+        <th class="mdl-data-table__cell--non-numeric">Origen</th>
+        <th class="mdl-data-table__cell--non-numeric">Destino</th>
       </tr>
       <tr>
         <td>
@@ -17,3 +21,5 @@
       </tr>
     </table>
   <% end %>
+
+</div>

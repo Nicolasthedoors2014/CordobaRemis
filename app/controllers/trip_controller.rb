@@ -1,5 +1,6 @@
 class TripController < ApplicationController
    before_action :authenticate_passenger!, except:[:new]
+   #validates :
 
   def new
     @locations = Location.all
@@ -27,6 +28,8 @@ class TripController < ApplicationController
   def distance
 
   end
+
+
 
 
 end

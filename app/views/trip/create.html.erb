@@ -1,28 +1,28 @@
 <%= form_tag("selectedTrip", method: "post") do %>
 
-<table class="rwd-table center-xs middle-xs">
-    <tr>
-      <th>Driver</th>
-      <th>Costo</th>
-      <th>Opiniones</th>
-      <th></th>
-    </tr>
+<table class="">
+    <div class="container">
+      <div>Driver</div>
+      <div>Costo</div>
+      <div>Opiniones</div>
+      <div></div>
+    </div>
 
       <% @allTrips.each do |driver, trip| %>
-        <tr>
-          <td>
+        <div class="container">
+          <div>
             <%= trip.driver[:name] %>
-          </td>
-          <td>
+          </div>
+          <div>
             <%= trip.cost %>
-          </td>
-          <td>
+          </div>
+          <div>
             <%= trip.driver[:rating] %>
-          </td>
-          <td>
+          </div>
+          <div>
             <%= radio_button_tag('driver', driver ) %>
-          </td>
-        </tr>
+          </div>
+        </div>
 
       <% end %>
 

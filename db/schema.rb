@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170729055404) do
+ActiveRecord::Schema.define(version: 20170728002650) do
 
   create_table "drivers", force: :cascade do |t|
     t.string "email", default: "", null: false

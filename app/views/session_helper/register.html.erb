@@ -1,11 +1,10 @@
-<h1 class="col-md-offset-3 font-large-3 white">
-  Te podes registrar como conductor o pasajero
-</h1>
 
-<li class="col-md-offset-4 font-large white">
-    <%= button_to('Pasajero',new_passenger_registration_path, :method =>:get, :class => "btn")  %>
-</li>
-
-<li class="col-md-offset-4 font-large white">
-    <%= button_to('Conductor',new_driver_registration_path, :method =>:get, :class => "btn")  %>
-</li>
+<div class="container-fluid d-flex justify-content-center  align-items-center ja flex-column">
+  <h1>
+    Te podes registrar como conductor o pasajero
+  </h1>
+  <%= button_to('Pasajero',new_passenger_registration_path, :method =>:get,
+     :class => "btn btn-primary btn-lg")  %>
+  <%= button_to('Conductor',new_driver_registration_path, :method =>:get,
+    :class => "btn btn-primary btn-lg")  %>
+</div>

@@ -3,10 +3,18 @@ Rails.application.routes.draw do
   # Root, Welcome page.
   root 'welcome#index'
 
+
   # Routes using gem devise for accounts
 
-  devise_for :drivers,path: 'drivers', :controllers => {:registrations => "drivers/registrations", :sessions =>"drivers/registrations"}
-  devise_for :passengers, path: 'passengers', controllers: {:sessions => "passengers/sessions"}
+  devise_for :drivers, path: 'drivers', :controllers => {
+    :registrations => "drivers/registrations"}
+
+
+
+  devise_for :passengers
+  #, path: 'passengers', controllers: {
+  #  :registrations => "passengers/registrations", :sessions => "passengers/sessions"}
+
 
   # Links for session auxiliary
   post 'session_helper/register'
