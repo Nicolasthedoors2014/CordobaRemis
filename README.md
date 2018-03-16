@@ -5,15 +5,15 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.4.1
 
-* System dependencies
+* System dependencies : All in Gemfile, run bundle install.
 
 * Configuration
 
-* Database creation
+* Database creation : rails db:migrate
 
-* Database initialization
+* Database initialization : : rails db:migrate
 
 * How to run the test suite
 

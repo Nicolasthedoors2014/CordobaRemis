@@ -1,0 +1,28 @@
+<div class="container-fluid d-flex justify-content-center  align-items-center regist flex-column">
+  <ul class="list-group">
+    <li class="list-group-item">
+      Nombre : <%= @user.name%>
+    </li>
+    <li class="list-group-item">
+      Email : <%= @user.email%>
+    </li>
+    <li class="list-group-item">
+      Telefono : <%= @user.phone %>
+    </li>
+    <li class="list-group-item">
+      Saldo : <%= @user.balance%>
+    </li>
+    <li class="list-group-item">
+      Tarifa : <%= @user.fare%>
+    </li>
+    <li class="list-group-item">
+      Liciencia : <%= @user.licence%>
+    </li>
+    <li class="list-group-item">
+      Ubicacion : <%= @user.location.name%>
+    </li>
+  </ul>
+
+  <%= link_to('Editar',edit_driver_registration_path,
+    :class => "btn btn-primary btn-lg")%>
+</div>

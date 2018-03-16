@@ -1,25 +1,28 @@
 
-<div class="container-fluid d-flex justify-content-center  align-items-center ja flex-column">
-
+<div class="container-fluid d-flex justify-content-center  align-items-center regist flex-column">
 
   <%= form_tag("create", method: "post") do %>
-    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-      <tr>
-        <th class="mdl-data-table__cell--non-numeric">Origen</th>
-        <th class="mdl-data-table__cell--non-numeric">Destino</th>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Origen</th>
+          <th scope="col">Destino</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr scope="row">
+        <td>
+          <%= select_tag(:origin, options_for_select(@locations.collect{ |u| [u.name, u.id] }),class: "btn btn-outline-primary") %>
+        </td>
+        <td scope="row">
+          <%= select_tag(:destination, options_for_select(@locations.collect{ |u| [u.name, u.id] }),class: "btn btn-outline-primary") %>
+        </td>
       </tr>
-      <tr>
-        <td>
-          <%= select_tag(:origin,  options_for_select(@locations.collect{ |u| [u.name, u.id] })) %>
-        </td>
-        <td>
-          <%= select_tag(:destination,  options_for_select(@locations.collect{ |u| [u.name, u.id] })) %>
-        </td>
-        <td>
-          <%= submit_tag "Pedir" %>
-        </td>
-      </tr>
+    </tbody>
     </table>
+    <div class="container d-flex justify-content-center  align-items-cente">
+      <%= submit_tag "Pedir viaje",class: "btn btn-outline-primary btn-lg" %>
+    </div>
   <% end %>
 
 </div>

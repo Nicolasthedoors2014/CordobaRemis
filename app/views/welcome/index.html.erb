@@ -1,4 +1,91 @@
-<div class="container-fluid d-flex justify-content-center  align-items-center ja flex-column">
-  <h1 class="display-1 "> CordobaRemis!</h1>
-  <p class="h3"> Viajar nunca fue tan sensillo, tu destino a solo algunos clicks.</p>
+<div class="container-fluid slider d-flex justify-content-center align-items-center">
+  <div class="container-fluid d-flex justify-content-center  align-items-center ja flex-column">
+    <h1 class="display-1 "> CordobaRemis!</h1>
+    <p class="h3"> Viajar nunca fue tan sensillo, tu destino a solo algunos clicks.</p>
+  </div>
+  <p class=""><%= notice %></p>
+  <p class=""><%= alert %></p>
 </div>
+
+<section class="container mt-5 pt-5">
+  <div class="card-deck">
+    <div class="card">
+      <%= image_tag("10.jpg", class: "card-img-top", alt: "Card image cap")%>
+
+      <div class="card-body">
+        <h5 class="card-title">Ahorra dinero</h5>
+        <p class="card-text">Los autos económicos siempre están disponibles.
+         Para ocasiones especiales, para ninguna ocasión en especial o cuando
+         solo necesitas más espacio.</p>
+        <p class="card-text"><small class="text-muted">Economico</small></p>
+      </div>
+    </div>
+    <div class="card">
+      <%= image_tag("361.jpg", class: "card-img-top", alt: "Card image cap")%>
+      <div class="card-body">
+        <h5 class="card-title">Donde sea cuando sea</h5>
+        <p class="card-text">Traslados diarios, encargos por la ciudad,
+          un vuelo temprano en la mañana y la diversión con amigos tarde por la
+          noche: a donde sea que vayas, cuenta con CordobaRemis para llevarte, sin
+          necesidad de reservar.</p>
+        <p class="card-text"><small class="text-muted">Practico</small></p>
+      </div>
+    </div>
+    <div class="card">
+      <%= image_tag("25.jpg", class: "card-img-top", alt: "Card image cap")%>
+      <div class="card-body">
+        <h5 class="card-title"> Llegar a donde sea es facil</h5>
+        <p class="card-text">Con solo tocar un botón, un auto llega directo por
+          ti. Súbete y no te preocupes: tu conductor sabrá a dónde ir. Y cuando
+          llegues al destino, el pago es totalmente sencillo.</p>
+        <p class="card-text"><small class="text-muted">Facil</small></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="jumbotron driver mt-5 rounded-0">
+  <div class="container">
+    <h1 class="display-4">Conduce cuando quieras.</h1>
+    <p class="lead">Registrate como conductor y genera las ganancias que necesitas.</p>
+    <hr class="my-4">
+    <p>Conducir con la app de CordobaRemis es una opción flexible que ayuda a los Socios Conductores a alcanzar sus metas profesionales y financieras.</p>
+    <p class="lead">
+      <%= button_to('Registrarse',new_driver_registration_path, :method =>:get,
+        :class => "btn btn-primary btn-lg")  %>
+    </p>
+  </div>
+</div>
+
+<div class="container-fluid d-flex justify-content-center  align-items-center a">
+  <div class="container">
+    <h1>Un viaje de confianza, de principio a fin</h1>
+    <p>Tu seguridad es importante para nosotros antes, durante y después de cada
+      viaje. Por eso, continuamos desarrollando tecnología que ayuda a hacer que
+      millones de viajes sean más seguros cada día.</p>
+      <button type="button" class="btn btn-primary">Como funciona CordobaRemis</button>
+  </div>
+
+  <div class="container">
+    <h1>Crea tu cuenta</h1>
+    <p>Regístrate y estarás listo para viajar y realizar paradas en el camino.</p>
+    <%= button_to('Pasajero',new_passenger_registration_path, :method =>:get,
+       :class => "btn btn-primary btn-lg")  %>
+  </div>
+</div>
+
+<section class="container-fluid nav_bottom d-flex justify-content-center  align-items-center ">
+  <div class="d-flex flex-column">
+    <div class="p-2">
+      <h6> Puedes encontrarnos en nuestras redes sociales</h3>
+        <%= image_tag("facebook.svg", class: "d-inline-block align-top", size:'30')%>
+        <%= image_tag("instagram.svg", class: "d-inline-block align-top", size:'30')%>
+        <%= image_tag("linkedin.svg", class: "d-inline-block align-top", size:'30')%>
+    </div>
+    <hr class="my-4" >
+    <div class="p-2">
+      <h6> Descargar nuestra aplicacion</h3>
+        <%= image_tag("android.svg", class: "d-inline-block align-top", size:'30')%>
+    </div>
+  </div>
+</section>

@@ -1,32 +1,38 @@
-<%= form_tag("selectedTrip", method: "post") do %>
+<div class="container-fluid d-flex justify-content-center  align-items-center regist flex-column">
+<%= form_tag("selected_trip", method: "post") do %>
 
-<table class="">
-    <div class="container">
-      <div>Driver</div>
-      <div>Costo</div>
-      <div>Opiniones</div>
-      <div></div>
-    </div>
-
+<table class="table">
+    <thead class="">
+      <tr>
+        <th scope="col">Driver</th>
+        <th scope="col">Costo</th>
+        <th scope="col">Opiniones</th>
+        <th scope="col">#<th>
+    </tr>
+    </thead>
+    <tbody>
       <% @allTrips.each do |driver, trip| %>
-        <div class="container">
-          <div>
-            <%= trip.driver[:name] %>
-          </div>
-          <div>
+        <tr>
+          <th>
+            <%= trip.driver.name %>
+          </th>
+          <th>
             <%= trip.cost %>
-          </div>
-          <div>
-            <%= trip.driver[:rating] %>
-          </div>
-          <div>
+          </th>
+          <th>
+            <%= trip.driver.rating.average %>
+          </th>
+          <th>
             <%= radio_button_tag('driver', driver ) %>
-          </div>
-        </div>
+          </th>
+        </tr>
 
       <% end %>
+    </tbody>
 
 <% end %>
 </table>
 
-<%= submit_tag "seleccionar", class: 'btn' %>
+<%= submit_tag "seleccionar", class: 'btn btn-primary' %>
+
+</div>

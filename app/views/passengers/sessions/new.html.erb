@@ -1,4 +1,8 @@
-<div class="container-fluid d-flex justify-content-center  align-items-center ja flex-column" >
+<div class="container d-flex justify-content-center align-items-start form_pass" >
+  <p class=""><%= notice %></p>
+  <p class=""><%= alert %></p>
+  <div class="container">
+
   <h2>Inicia sesión</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -23,5 +27,7 @@
   <% end %>
 
   <%= render "passengers/shared/links" %>
+
+</div>
 
 </div>

@@ -16,12 +16,15 @@
  // Custom bootstrap variables must be set or imported *before* bootstrap.
  @import "bootstrap";
 
-
+ .body{
+   padding: 0%;
+ }
  .slider{
    background: url("a1.jpeg");
    height: 100vh;
    background-size: cover;
    background-position: center;
+   padding: 0%;
  }
 
  .driver{
@@ -33,7 +36,7 @@
  }
 
  .ja{
-   background-color:rgba(0, 0, 0, 0.5);;
+   background-color:rgba(0, 0, 0, 0.5);
    height: 60vh;
    background-size: cover;
    color: white;
@@ -41,13 +44,34 @@
    margin-right: 200px;
  }
 
- .dale{
+ .regist{
+   height: 100vh;
+   color: black;
+ }
+
+ .form_cor{
+   margin: 20%;
+   height: 65vh;
+   background-size: auto;
+   background-position: bottom;
+ }
+
+ .form_pass{
+   margin: 8%;
+   height: 65vh;
+   background-size: auto;
+   background-position: bottom;
+ }
+ .nav-cor{
    margin-right: 55px;
  }
 
- .abajo{
-   background-color: black;
+ .a{
    height: 65vh;
+ }
+ .nav_bottom{
+   background-color: black;
+   height: 40vh;
    color: white;
    background-size: cover;
    background-position: center;

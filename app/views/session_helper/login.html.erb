@@ -1,11 +1,9 @@
 
-<div class="container-fluid d-flex justify-content-center  align-items-center ja flex-column">
-  <h1>
-    Iniciar sesión como:
-  </h1>
+<div class="container-fluid d-flex justify-content-center  align-items-center regist flex-column">
+  <h2> Iniciar sesión como:</h2>
   <%= button_to('Pasajero',new_passenger_session_path, :method =>:get,
-    :class => "btn btn-primary btn-lg")%>
+    :class => "btn btn-primary btn-lg mt-5")%>
 
   <%= button_to('Conductor',new_driver_session_path, :method =>:get,
-    :class => "btn btn-primary btn-lg")%>
+    :class => "btn btn-primary btn-lg mt-5")%>
 </div>

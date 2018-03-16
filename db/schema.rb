@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170728002650) do
+ActiveRecord::Schema.define(version: 20180223171341) do
 
   create_table "drivers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20170728002650) do
     t.float "balance", default: 0.0
     t.string "licence"
     t.float "fare"
-    t.float "rating"
     t.integer "location_id"
     t.index ["email"], name: "index_drivers_on_email", unique: true
     t.index ["location_id"], name: "index_drivers_on_location_id"
@@ -64,6 +63,18 @@ ActiveRecord::Schema.define(version: 20170728002650) do
     t.float "miles", default: 0.0
     t.index ["email"], name: "index_passengers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_passengers_on_reset_password_token", unique: true
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer "one", default: 0
+    t.integer "two", default: 0
+    t.integer "three", default: 0
+    t.integer "four", default: 0
+    t.integer "five", default: 0
+    t.integer "driver_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["driver_id"], name: "index_ratings_on_driver_id", unique: true
   end
 
 end

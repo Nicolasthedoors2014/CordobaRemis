@@ -9,9 +9,12 @@ class Drivers::RegistrationsController < Devise::RegistrationsController
    end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+    driver = current_driver
+    rating = Rating.create()
+    driver.rating = rating
+  end
 
   # GET /resource/edit
   # def edit

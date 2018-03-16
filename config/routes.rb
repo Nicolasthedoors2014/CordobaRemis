@@ -1,20 +1,17 @@
 Rails.application.routes.draw do
 
+
   # Root, Welcome page.
   root 'welcome#index'
 
-
-  # Routes using gem devise for accounts
-
+  # Routes for driver model
   devise_for :drivers, path: 'drivers', :controllers => {
     :registrations => "drivers/registrations"}
+  resources :drivers, only: [:show]
 
-
-
+  # Routes for passenger model
   devise_for :passengers
-  #, path: 'passengers', controllers: {
-  #  :registrations => "passengers/registrations", :sessions => "passengers/sessions"}
-
+  resources :passengers, only: [:show]
 
   # Links for session auxiliary
   post 'session_helper/register'
@@ -23,12 +20,14 @@ Rails.application.routes.draw do
   get 'session_helper/login'
 
   # Routes for trip
-  post 'trip/new'
-
   get 'trip/new'
   post 'trip/create'
-  get 'trip/selectTrip'
-  post 'trip/selectedTrip'
+  get 'trip/create' => redirect('trip/new')
+  get 'trip/selected_trip' => redirect('trip/new')
+  post 'trip/selected_trip'
+  post 'trip/finish_trip'
+
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
