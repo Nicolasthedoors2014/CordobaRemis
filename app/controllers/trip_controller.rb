@@ -24,7 +24,11 @@ class TripController < ApplicationController
   end
 
   def selected_trip
-    session[:driver] = params[:driver].to_i
+    if !params[:driver].nil?
+      session[:driver] = params[:driver].to_i
+    else
+      redirect_to :controller => 'trip', :action => 'new'
+    end
   end
 
   def finish_trip
